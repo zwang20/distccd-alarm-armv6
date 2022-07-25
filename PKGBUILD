@@ -1,4 +1,3 @@
-_subarchs=(armv6h)
 pkgbase='distccd-alarm'
 pkgname='distccd-alarm-armv6'
 pkgver=8.1.0
