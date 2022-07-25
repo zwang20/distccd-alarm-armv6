@@ -28,7 +28,7 @@ _package_subarch() {
        "${pkgdir}/etc/conf.d/distccd-$1"
     
 }
-
+package() {
 for i in "${!_subarchs[@]}"; do   
     _xtoolsdir="${source[i]##*/}"
     _xtoolsdir="${_xtoolsdir%%.*}"
@@ -36,3 +36,4 @@ for i in "${!_subarchs[@]}"; do
         _package_subarch '${_subarchs[i]}' '${_xtoolsdir}'
     }'
 done
+}
