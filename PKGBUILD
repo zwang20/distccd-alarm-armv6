@@ -28,11 +28,9 @@ _package_subarch() {
     
 }
 package() {
-for i in "${!_subarchs[@]}"; do   
-    _xtoolsdir="${source[i]##*/}"
-    _xtoolsdir="${_xtoolsdir%%.*}"
-    eval 'package_distccd-alarm-'${_subarchs[i]}'() {
+    for i in "${!_subarchs[@]}"; do   
+        _xtoolsdir="${source[i]##*/}"
+        _xtoolsdir="${_xtoolsdir%%.*}"
         _package_subarch '${_subarchs[i]}' '${_xtoolsdir}'
-    }'
-done
+    done
 }
